@@ -1,0 +1,547 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Барановский</title>
+<style>
+body{ 
+	height: 100%;
+	 margin: 0;
+	padding: 0; 
+	overflow: auto;
+}
+
+#title1 {
+	white-space: nowrap;
+	text-align: center; 
+	font-family: "Arial Black"; 
+	color: white; 
+	margin: 0; 
+	position: absolute; 
+	top: 50%; 
+	left: 50%; 
+	margin-right: -50%; 
+	transform: translate(-50%, -50%) 
+}
+
+#title2 {
+	text-align: center; 
+	font-family: "Arial Black"; 
+	color: white; 
+	margin: 0; 
+	position: absolute; 
+	top: 59%; 
+	left: 50%; 
+	margin-right: -50%; 
+	transform: translate(-50%, -50%) 
+}
+
+.title {
+	text-align: center; 
+	font-family: "Arial Black";
+}
+
+.main_frame {
+	width: 100%; 
+	height: 100vh; 
+	background-image: url('gg.jpg'); 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size: 100% 100%;  
+}
+
+.par{
+	font-family: "Times New Roman"; 
+	text-align:justify; 
+	display: inline-block;
+	justify-content: center; 
+	margin-top: 3px;     
+}
+
+.razdel2{
+	overflow: hidden;
+	 width: 100%; 
+	 min-height: 100vh; 
+	 background-color: rgb(226, 222, 216); 
+	 background-repeat: no-repeat; 
+	 background-attachment: fixed; 
+	 background-size: 100% 100%;
+	 display: flex; 
+	 justify-content: center; 
+}
+
+.razdel4{
+	width: 100%; 
+	height: 100vh; 
+	background-color: rgb(175, 170, 162); 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size: 100% 100%; 
+	display: flex; 
+	justify-content: center;
+	justify-content: space-evenly; 
+	flex-direction: column; 
+	align-items: center;
+}
+
+.razdel5{ 
+	background-color: rgb(149, 147, 144);
+	 display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center; 
+}
+
+.razdel6{ background-color: #9ea5b5;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center; 
+ }
+
+.menu { 
+	position: fixed; 
+	top: 0;  
+	width: 100%; 
+	display: table;
+	z-index: 2;
+}
+
+.menu ul { 
+	white-space: nowrap; 
+	display: flex; 
+	text-align: right; 
+	justify-content: space-between;  
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	overflow: hidden; 
+	background-color: #333;
+}
+
+.menu li {display: table-cell; 
+	float: right
+}
+
+.menu ul li:hover, 
+.menu a:hover {
+	background: #666;
+}
+
+.menu li a { 
+	text-decoration: none; 
+	display: block; 
+	padding: 20px 25px; 
+	color: white; 
+	text-align: center; 
+	font-size: 20px;
+}
+
+.logo {  
+    display: flex;
+    align-items: center;
+	font-family: " Georgia";
+	margin: 0; padding: 0;
+	z-index: 100;	
+} 
+
+.logo img {
+    width: 63px; /* Измените размеры по своему усмотрению */
+    height: auto;
+	top: 0%;	
+}
+
+.logo-text {
+    margin-left: 10px;
+	color: white;	
+	font-size: 35px;
+}
+
+.main-footer {
+  background-color: #333;
+  text-align:center; 
+  color: #fafaff; 
+  padding-top: 1px;
+ }
+
+ #text2 {  
+    top: 50px;
+    left: 110px;
+    display: flex;
+    color: rgb(0, 0, 0);
+    align-items: center; 
+}
+
+.text5 {
+	flex-flow: column nowrap;
+   display: flex;
+   margin: 0px 0px 0px 277px;
+   margin-right: 70px;
+   z-index: 1;
+   font-size: 15px;
+   min-width: 600px;
+} 
+
+.main_frame::before{
+content: '';
+position: absolute;
+height: 100vh;
+width: 100%;
+background: rgba(0, 0, 0, 0.678);
+}
+
+.razdel3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	background: #96978e;
+	color: #fff;
+	font-family: sans-serif;
+}
+
+.main-title {
+	font-size: 50px;
+	color: #000000;
+	white-space: nowrap;
+	overflow: hidden; 
+	max-width: 100%;
+    min-width: 0px;
+    overflow: hidden;
+}
+
+.container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 80%;
+}
+
+.description {
+	width: 20%;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	max-width: 100%;
+    min-width: 0px;
+    overflow: hidden;
+}
+
+.icons {
+	width: 80px;
+	height: 80px;
+	font-size: 40px;
+	border-radius: 50%;
+	margin: 60px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.first-icon {
+	background: rgb(111, 10, 66);
+	box-shadow: 
+	0 0 0 10px rgba(112, 10, 65, 0.3),
+	0 0 0 20px rgba(105, 10, 61, 0.2),
+	0 0 0 30px rgba(64, 7, 37, 0.1),
+	0 0 0 40px rgba(79, 8, 46, 0.05);
+}
+
+.second-icon {
+	background: rgb(13, 92, 88);
+	box-shadow: 
+	0 0 0 10px rgba(14, 98, 94, 0.411),
+	0 0 0 20px rgba(5, 80, 80, 0.344),
+	0 0 0 30px rgba(6, 74, 74, 0.167),
+	0 0 0 40px rgba(10, 55, 56, 0.062);
+}
+
+.third-icon {
+	background: rgba(48, 32, 227, 1);
+	box-shadow: 
+	0 0 0 10px rgba(48, 32, 227, .3),
+	0 0 0 20px rgba(48, 32, 227, .2),
+	0 0 0 30px rgba(48, 32, 227, .1),
+	0 0 0 40px rgba(48, 32, 227, .05);
+}
+
+.fourth-icon {
+	background: rgb(157, 168, 4);
+	box-shadow: 
+	0 0 0 10px rgba(218, 245, 15, 0.3),
+	0 0 0 20px rgba(207, 245, 15, 0.2),
+	0 0 0 30px rgba(230, 245, 15, 0.1),
+	0 0 0 40px rgba(199, 245, 15, 0.05);
+}
+
+.gg-time {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 2px currentColor
+}
+
+.gg-time::after {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    top: 1px;
+    left: 5px
+}
+
+.imgs{
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	min-width: 0px;
+	max-width: 100%;
+    height: auto;
+    width: 1250px;
+	gap: 10px;
+	overflow: hidden;
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.registration{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+	justify-content: center;
+    align-items: center;
+}
+
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+
+.registration h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.form-group textarea {
+	resize: none;
+	display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+	justify-content: center;
+    align-items: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+::placeholder{
+    color: #e5e5e5;
+	
+}
+
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+
+.feedback {
+	font-size: 50px;
+	overflow: hidden;
+	font-family: "Arial Black";
+	color: white;
+	margin: -10px; 
+	white-space: nowrap;
+	display: block;
+}	
+	
+.order{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+	justify-content: center;
+    align-items: center;
+}
+
+.order h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+</style>
+</head>
+<body>	
+<div class="menu">
+	<ul>
+		<div class="logo">
+			<img src="1233.png" alt="Логотип">
+			<div class="logo-text">Стрела Времени</div>
+		</div>
+		<li><a href="#home">Главная</a></li>
+		<li><a href="#about">О товаре</a></li>
+		<li><a href="#benefits">Выгоды</a></li>
+		<li><a href="#trust">Доверие</a></li>
+		<li><a href="#registration">Регистрация</a></li>
+		<li><a href="#order">Оформление заказа</a></li>
+	</ul>
+</div>
+<div class="main_frame" id="home" >
+<h1 id = "title1">Подари окружающим яркость света с новыми часами</h1>
+<h2 id = "title2">Импульс</h2>
+<a href="#about">
+	<img src="55.png" alt="cnhtkrf" style="height: 80px; position: absolute;
+	left: 0; bottom: 0;">
+</a>
+</div>
+<div class="product-description" id="about">
+	<!-- Добавляем контент для вкладки "О нас" -->
+	<div id="text2" class="razdel2" >
+	  <img src="watch.jpeg" alt="Часы"   style="height: 450px; transform: translateX(130px); z-index: 1; border-radius: 10px; border: 5px #ccc solid; box-shadow: 0 0 10px #444;">
+	   <div class="text5">
+		<h2>Часы в коллекции часового производства "Стрела Времени"</h2>
+		<p>Часы в коллекции часового производства "Стрела Времени" представлены моделями нескольких цветовых решений в корпусе из пластика. Цвет корпуса соответствует цвету силиконового ремня. Цвет циферблата поддерживает ту же цветовую гамму. Минеральное часовое стекло с линзой над календарным окошком. Водонепроницаемость 50 метров. Вращающийся безель со шкалой позволяет отследить до 60 минут с любого момента времени(*).</p>
+		<h3>Принцип работы безеля</h3>
+		<p>Для того, чтобы безель начал работать, указывая вам прошедшее с начала измерений время, стоит всего лишь повернуть его. Сделать это нужно таким образом, чтобы контрольная метка, которая чаще всего выполняется в форме треугольника, совпала с показанием минутной стрелки. Вот и все - остальные измерения возьмут на себя ваши часы. А безель, в свою очередь, укажет, сколько времени прошло с момента начала отсчета. Этот незамысловатый, но весьма удобный механизм, чрезвычайно востребован там, где функции хронометра избыточны и не требуется сверхточных измерений. Кроме этого, наручные часы с безелем смотрятся весьма привлекательно даже по сравнению со многими изысканными моделями часов.</p>
+	</div>
+</div>
+</div>
+<div class="razdel3" id="benefits">
+    <h1 class="main-title">Почему именно наша компания?</h1>
+	<div class="container">
+		<div class="description">
+			<div class="first-icon icons"><i class="gg-time" aria-hidden="true"></i></div>
+			<p class="descr">Наши часы изготовлены из высококачественных материалов и имеют надежный механизм, который обеспечит долговечное времяпрепровождение.</p>
+		</div>
+		<div class="description">
+			<div class="second-icon icons"><i class="gg-time" aria-hidden="true"></i></div>
+			<p class="descr">Наша компания имеет отличную репутацию на рынке часов и множество довольных клиентов, что подтверждает наше качество и надежность.</p>
+		</div>
+		<div class="description">
+			<div class="third-icon icons"><i class="gg-time" aria-hidden="true"></i></div>
+			<p class="descr">Наша компания постоянно следит за последними тенденциями в мире часового искусства и внедряет инновационные технологии.</p>
+		</div>
+		<div class="description">
+			<div class="fourth-icon icons"><i class="gg-time" aria-hidden="true"></i></div>
+			<p class="descr">Мы обеспечиваем отличное обслуживание клиентов и гарантируем полное удовлетворение от покупки часов у нас.</p>
+		</div>
+	</div>
+</div>
+<div class="razdel4" id="trust" >
+	<h1 class="feedback">Отзывы наших покупателей</h1>
+	<div class="imgs">		
+			<img src="ot1.png" alt="Фотография 1" style="height: 200px; width:400px; box-shadow: 0 0 10px #444; border: 5px #ccc solid; max-width: 100%; min-width: 0px; overflow: hidden;" >
+			<img src="ot2.png" alt="Фотография 2" style="height: 200px; width:400px; box-shadow: 0 0 10px #444; border: 5px #ccc solid; max-width: 100%; min-width: 0px; overflow: hidden;" >
+			<img src="ot3.png" alt="Фотография 3" style="height: 200px; width:400px; box-shadow: 0 0 10px #444; border: 5px #ccc solid; max-width: 100%; min-width: 0px; overflow: hidden;" >		  
+	</div>
+</div>
+<div class="razdel5" id="registration">
+	<div class="registration">
+    <form action="#">
+        <h3>Регистрация</h3>
+        <label for="Email">Email</label>
+        <input type="email" placeholder="Email" id="Email1">
+        <label for="password">Пароль</label>
+        <input type="password" placeholder="Пароль" id="password">
+        <button>Зарегистрироваться</button>
+        
+    </form>
+	</div>
+</div>
+<div class="razdel6" id="order">
+	<div class="order">
+	<form action="#">
+        <h3>Оформление заказа</h3>
+        <label for="Email">Email</label>
+        <input type="email" placeholder="Email" id="Email2">
+        <label for="Dopinf">Доп.Информация</label>
+        <div class="form-group">
+			<textarea placeholder="Доп.Информация"></textarea>
+		  </div>
+        <button>Оформить заказ</button>
+    </form>
+	</div>
+</div>
+	<div class="main-footer">
+<h2 class = "title">ЛИЧНАЯ ИНФОРМАЦИЯ</h2>
+<p class = "par"> ФИО: Барановский Артем Владиславович</p>
+<p  class = "par" style="padding-right: 70px;
+padding-left: 70px;"> Дата рождения: 28.06.2005</p>
+<p  class = "par"> e-mail: ya.artemb@gmail.com</p>
+</div>
+</body>
+</html>
